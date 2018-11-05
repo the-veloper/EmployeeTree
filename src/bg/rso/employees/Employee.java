@@ -1,6 +1,5 @@
 package bg.rso.employees;
 
-
 import bg.rso.departments.Department;
 
 public abstract class Employee {
