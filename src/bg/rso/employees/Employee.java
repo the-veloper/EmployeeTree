@@ -4,23 +4,15 @@ import bg.rso.departments.Department;
 
 public abstract class Employee {
 
-    protected long employeeId;
     protected String employeeName;
     protected String designation;
     protected Department department;
 
-    public Employee(long employeeId, String employeeName, String designation, Department department) {
+    public Employee(String employeeName, String designation, Department department) {
         super();
-        this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.designation = designation;
         this.department = department;
-    }
-    public long getEmployeeId() {
-        return employeeId;
-    }
-    public void setEmployeeId(long employeeId) {
-        this.employeeId = employeeId;
     }
     public String getEmployeeName() {
         return employeeName;
@@ -44,7 +36,7 @@ public abstract class Employee {
 
     public String fullDetails() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Employee [").append(employeeId)
+        builder.append("Employee [")
                 .append(", ").append(employeeName)
                 .append(", ").append(designation)
                 .append(", ").append(department)

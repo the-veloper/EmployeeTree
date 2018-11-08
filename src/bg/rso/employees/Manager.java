@@ -1,14 +1,13 @@
 package bg.rso.employees;
 
 import bg.rso.departments.Department;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeamLead extends Employee {
+public class Manager extends Employee {
     List<Employee> managingEmployees = new ArrayList<Employee>();
 
-    public TeamLead(String employeeName, String designation, Department department) {
+    public Manager(String employeeName, String designation, Department department) {
         super(employeeName, designation, department);
     }
 
