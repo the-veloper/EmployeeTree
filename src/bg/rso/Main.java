@@ -75,11 +75,7 @@ public class Main {
         return null;
     }
     public static Department createDepartment(String departmentName) {
-        if(departments == null) {
-            System.out.println("aloo");
-        }
        if (departments.containsKey(departmentName)) {
-           System.out.println("eho");
         return departments.get(departmentName);
        }
        return new Department(departmentName);
