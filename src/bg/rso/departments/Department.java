@@ -1,6 +1,8 @@
 package bg.rso.departments;
 
-public class Department {
+import java.io.Serializable;
+
+public class Department implements Serializable {
     protected String departmentName;
 
     public void setDepartmentName(String departmentName) {

@@ -35,6 +35,8 @@ public abstract class Employee implements Serializable {
         this.department = department;
     }
     public abstract int teamSize();
+    public abstract boolean manages(Employee employee);
+    public abstract boolean stopManaging(Employee employee);
 
     public String fullDetails() {
         StringBuilder builder = new StringBuilder();

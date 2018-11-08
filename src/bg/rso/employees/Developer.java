@@ -12,4 +12,14 @@ public class Developer extends Employee {
     public int teamSize() {
         return 1;
     }
+
+    @Override
+    public boolean manages(Employee employee) {
+        return false;
+    }
+
+    @Override
+    public boolean stopManaging(Employee employee) {
+        return false;
+    }
 }
