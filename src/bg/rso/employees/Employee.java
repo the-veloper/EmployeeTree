@@ -9,6 +9,7 @@ public abstract class Employee implements Serializable {
     protected String employeeName;
     protected String designation;
     protected Department department;
+    protected Employee manager;
 
     public Employee(String employeeName, String designation, Department department) {
         super();
@@ -16,6 +17,13 @@ public abstract class Employee implements Serializable {
         this.designation = designation;
         this.department = department;
     }
+    public Employee getManager() {
+        return manager;
+    }
+    public void setManager(Employee e) {
+        this.manager = e;
+    }
+
     public String getEmployeeName() {
         return employeeName;
     }

@@ -34,9 +34,12 @@ public class ProjectManager extends Employee {
                 .map(teamLead -> teamLead.department.getDepartmentName())
                 .collect(Collectors.joining(", "));
         if(managingdepartments.isEmpty()) {
-            managingdepartments = "no ";
+            managingdepartments = "no";
         }
-       String details =  sb.append(employeeName).append(" manages ").append(managingdepartments).append(" departments").toString();
-       return details;
+       StringBuilder details =  sb.append(employeeName).append(" manages ").append(managingdepartments).append(" departments");
+        if(manager != null) {
+            details.append("He has ").append(manager.employeeName).append(" as manager");
+        }
+       return details.toString();
     }
 }

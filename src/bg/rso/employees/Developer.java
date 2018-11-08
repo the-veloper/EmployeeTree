@@ -22,4 +22,17 @@ public class Developer extends Employee {
     public boolean stopManaging(Employee employee) {
         return false;
     }
+
+    @Override
+    public String fullDetails() {
+        StringBuilder sb = new StringBuilder();
+                sb.append(employeeName)
+                .append(" works at the ")
+                .append(department.getDepartmentName())
+                .append(" department ")
+                .append("He has ")
+                .append(manager.employeeName)
+                .append(" as manager");
+        return sb.toString();
+    }
 }

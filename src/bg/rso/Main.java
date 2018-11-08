@@ -86,6 +86,7 @@ public class Main {
         if(employees.containsKey(manager)) {
             Employee mng = employees.get(manager);
             mng.manages(e);
+            e.setManager(mng);
         }
         saveData();
     }
