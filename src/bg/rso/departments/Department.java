@@ -15,6 +15,10 @@ public class Department {
         builder.append("'").append(departmentName).append("'");
         return builder.toString();
     }
+    public Department(String departmentName) {
+        super();
+        this.departmentName = departmentName;
+    }
 
     @Override
     public String toString() {

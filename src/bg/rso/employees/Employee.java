@@ -2,7 +2,9 @@ package bg.rso.employees;
 
 import bg.rso.departments.Department;
 
-public abstract class Employee {
+import java.io.Serializable;
+
+public abstract class Employee implements Serializable {
 
     protected String employeeName;
     protected String designation;

@@ -2,85 +2,43 @@ package bg.rso;
 
 import bg.rso.departments.Department;
 import bg.rso.employees.*;
-import java.util.Collection;
-import java.util.Map;
+import java.util.HashMap;
 import java.util.Scanner;
-import java.util.Set;
 
 public class Main {
     public static final int EMPLOYEE_MANAGER = 1;
     public static final int EMPLOYEE_PM = 2;
     public static final int EMPLOYEE_TEAMLEAD = 3;
     public static final int EMPLOYEE_DEV = 4;
-    private static Map<String, Department> departments = new Map<String, Department>() {
-        @Override
-        public int size() {
-            return 0;
-        }
+    private static HashMap<String, Department> departments;
+    private static HashMap<String, Employee> employees;
 
-        @Override
-        public boolean isEmpty() {
-            return false;
-        }
+    public static void loadData() {
+        employees = DataLoader.loadEmployees();
+        departments = DataLoader.loadDepartments();
+        System.out.println("loaded");
+    }
 
-        @Override
-        public boolean containsKey(Object key) {
-            return false;
-        }
-
-        @Override
-        public boolean containsValue(Object value) {
-            return false;
-        }
-
-        @Override
-        public Department get(Object key) {
-            return null;
-        }
-
-        @Override
-        public Department put(String key, Department value) {
-            return null;
-        }
-
-        @Override
-        public Department remove(Object key) {
-            return null;
-        }
-
-        @Override
-        public void putAll(Map<? extends String, ? extends Department> m) {
-
-        }
-
-        @Override
-        public void clear() {
-
-        }
-
-        @Override
-        public Set<String> keySet() {
-            return null;
-        }
-
-        @Override
-        public Collection<Department> values() {
-            return null;
-        }
-
-        @Override
-        public Set<Entry<String, Department>> entrySet() {
-            return null;
-        }
-    };
-
+    public static void saveData() {
+        DataLoader.saveDepartments(departments);
+        DataLoader.saveEmployees(employees);
+    }
 
     public static void main(String[] args) {
+        loadData();
         int userChoice;
         do {
             userChoice = menu();
+            switch (userChoice) {
+                case 1:
+                    break;
+                case 2:
+
+                    break;
+            }
             clear();
         } while (userChoice != 3);
+        saveData();
     }
 
     public static void clear() {
@@ -115,6 +73,16 @@ public class Main {
                 return new TeamLead(name,designation,d);
         }
         return null;
+    }
+    public static Department createDepartment(String departmentName) {
+        if(departments == null) {
+            System.out.println("aloo");
+        }
+       if (departments.containsKey(departmentName)) {
+           System.out.println("eho");
+        return departments.get(departmentName);
+       }
+       return new Department(departmentName);
     }
 }
 
