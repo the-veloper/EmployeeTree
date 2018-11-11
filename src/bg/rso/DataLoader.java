@@ -10,6 +10,9 @@ public class DataLoader {
     private static String departmentsFile = "departments.ser";
     private static String employeesFile = "employees.ser";
 
+    /*
+     * Saves serialized object employees in employeesFile.
+     */
     public static void saveEmployees(HashMap employees) {
         try
         {
@@ -24,6 +27,9 @@ public class DataLoader {
             ioe.printStackTrace();
             System.out.println("Could not save!");
         }
+    /*
+     * Saves serialized object departments in departmentsFile.
+     */
     }
     public static void saveDepartments(HashMap departments) {
         try
@@ -40,6 +46,9 @@ public class DataLoader {
             System.out.println("Could not save!");
         }
     }
+    /*
+     * Loads serialized data from file.
+     */
     public static HashMap<String, Department> loadDepartments() {
         HashMap<String, Department> map;
         try
@@ -56,6 +65,9 @@ public class DataLoader {
             return new HashMap<String, Department>();
         }
     }
+    /*
+     * Loads serialized data from file.
+     */
     public static HashMap<String, Employee> loadEmployees() {
         HashMap<String, Employee> map;
         try

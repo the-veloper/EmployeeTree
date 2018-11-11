@@ -27,7 +27,7 @@ public class Developer extends Employee {
     public String fullDetails() {
         StringBuilder sb = new StringBuilder();
                 sb.append(employeeName)
-                .append(" works at the ")
+                .append(" (Developer) works at the ")
                 .append(department.getDepartmentName())
                 .append(" department ")
                 .append("He has ")

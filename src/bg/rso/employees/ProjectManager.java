@@ -36,7 +36,7 @@ public class ProjectManager extends Employee {
         if(managingdepartments.isEmpty()) {
             managingdepartments = "no";
         }
-       StringBuilder details =  sb.append(employeeName).append(" manages ").append(managingdepartments).append(" departments");
+       StringBuilder details =  sb.append(employeeName).append("(PM) manages ").append(managingdepartments).append(" departments");
         if(manager != null) {
             details.append("He has ").append(manager.employeeName).append(" as manager");
         }

@@ -23,4 +23,16 @@ public class Manager extends Employee {
     public int teamSize() {
         return managingEmployees.stream().mapToInt(employee -> employee.teamSize()).sum();
     }
+
+    @Override
+    public String fullDetails() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(employeeName)
+                .append("(Manager) works at the ")
+                .append(department.getDepartmentName())
+                .append(" department ")
+                .append("as ")
+                .append(designation);
+        return sb.toString();
+    }
 }

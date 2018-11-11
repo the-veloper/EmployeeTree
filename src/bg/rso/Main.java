@@ -16,17 +16,26 @@ public class Main {
     private static HashMap<String, Employee> employees;
     private static Scanner scanner = new Scanner( System.in );
 
+    /*
+     * Calls the DataLoader class loading methods.
+     */
     public static void loadData() {
         employees = DataLoader.loadEmployees();
         departments = DataLoader.loadDepartments();
         System.out.println("loaded");
     }
 
+    /*
+     * Calls the Dataloader class saving methods.
+     */
     public static void saveData() {
         DataLoader.saveDepartments(departments);
         DataLoader.saveEmployees(employees);
     }
 
+    /*
+     * Prints the main menu and handles main menu userchoices.
+     */
     public static void main(String[] args) {
         loadData();
         int userChoice;
@@ -45,6 +54,9 @@ public class Main {
         saveData();
     }
 
+    /*
+     * When chosen "Add employee" gets the employee info and creates an employee.
+     */
     public static void employeeStep() {
         String name = "";
         String department = "";
@@ -91,11 +103,17 @@ public class Main {
         saveData();
     }
 
+    /*
+     * Clears the screen.
+     */
     public static void clear() {
-        System.out.print("\u001b[2J");
-        System.out.flush();
+//        System.out.print("\u001b[2J");
+        //        System.out.flush();
     }
 
+    /*
+     * Loops through employees and prints them in format "<id> - <name>"
+     */
     public static void listEmployees() {
         Set<String> employeenames = employees.keySet();
         int i = 1;
@@ -108,6 +126,9 @@ public class Main {
         System.out.println(employees.get(employeenames.toArray()[selected-1]).fullDetails());
     }
 
+    /*
+     * Main menu text
+     */
     public static int menu() {
 
         int selection;
@@ -121,6 +142,9 @@ public class Main {
         selection = scanner.nextInt();
         return selection;
     }
+    /*
+     * returns a new employee based on the parameters given.
+     */
     public static Employee createEmployee(int type, String name, String designation, String department) {
         Department d = departments.get(department);
         switch (type) {
@@ -135,6 +159,9 @@ public class Main {
         }
         return null;
     }
+    /*
+     * Returns a existing or new department.
+     */
     public static Department createDepartment(String departmentName) {
        if (departments.containsKey(departmentName)) {
         return departments.get(departmentName);

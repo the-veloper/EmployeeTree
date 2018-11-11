@@ -29,7 +29,7 @@ public class TeamLead extends Employee {
     public String fullDetails() {
         StringBuilder sb = new StringBuilder();
         sb.append(employeeName)
-                .append(" manages the ")
+                .append(" (TeamLead) manages the ")
                 .append(department.getDepartmentName())
                 .append(" department ")
                 .append("He has ")
